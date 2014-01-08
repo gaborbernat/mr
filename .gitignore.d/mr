@@ -1,10 +1,2 @@
 *
-!/.config
-!/.config/mr
-!/.config/mr/available.d
-!/.config/mr/available.d/vim.vcsh
-!/.config/mr/available.d/zsh.vcsh
-!/.config/mr/config.d
-!/.config/mr/config.d/zsh.vcsh
-!/.config/mr/custom
-!/.config/mr/custom/enable_git_subtree.sh
+!/.config/mr/*
