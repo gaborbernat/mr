@@ -1,2 +1,5 @@
-*
-!/.config/mr/*
+/*
+!/.config
+/.config/*
+!/.config/mr
+!/.gitignore.d/mr
