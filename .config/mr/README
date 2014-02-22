@@ -1,0 +1,48 @@
+vcsh - a tool that allows you to have multiple repositories in the same folder (aka your home folder)
+====
+a. vcsh [repo name] [command]
+is essentially just an alias to the git [command] inside the repository
+
+b.  you can also avoid specifying the repo name if you enter into that repo via vcsh enter [repo name]. 
+    At this point using the vcsh or the repo is essentially the same.
+
+c.
+ to create a new repository you need to: 
+ 1. create a new vcsh repository: vcsh init [repo name]
+ 2. add new files                 vcsh [repo name] [commands] 
+ 3. commit to create first ref    vcsh [repo name] commit -m "start repo"
+ 4. add a remote server           vcsh [repo name] remote add origin git@github.com:gaborbernat/[repo name].git 
+ 5. create a remote branch        vcsh [repo name] push -u origin master 
+
+-----------------------------------------------------------------------------------------------------------------------------------
+mr - mr is the tool to avoid updating the multiple repositories one by one, essentially it's just a wrapper around the other repos. 
+=== 
+mr up - this command updates the repository, it does this by following convention
+all configuration is stored in a vcsh repository itself, entitled mr
+
+$HOME
+    |-- $XDG_CONFIG_HOME (defaults to $HOME/.config)
+    |   |-- mr
+    |   |   |-- available.d
+    |   |   |   |-- zsh.vcsh
+    |   |   |   `-- snippets.git
+    |   |   `-- config.d
+    |   |       |-- zsh.vcsh        -> ../available.d/zsh.vcsh
+    |   |       `-- vim.vcsh        -> ../available.d/vim.vcsh
+    |   `-- vcsh
+    |       |-- config
+    |       `-- repo.d
+    |           |-- zsh.git  -----------+
+    |           |-- tmux.git            |
+    |           `-- vim.git             |
+    |-- [...]                           |
+    |-- .zshrc   <----------------------+
+    |-- .gitignore.d
+    |   `-- zsh
+    |-- .mrconfig
+    `-- .mrtrust
+
+- the gitignore file should be in the root of git repo, for vcsh this is replaced with the usage of the .gitignore.d folder inside this the [repo name] file is used as gitignore
+- the actual git repos are kept inside the vcsh folder inside .config
+- the available git repositories are inside mr/available.d 
+- the repos you would like to check on a local system are inside config.d via symbolic links
