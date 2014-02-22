@@ -13,7 +13,7 @@ c.
  3. commit to create first ref    vcsh [repo name] commit -m "start repo"
  4. add a remote server           vcsh [repo name] remote add origin git@github.com:gaborbernat/[repo name].git 
  5. create a remote branch        vcsh [repo name] push -u origin master 
-
+ 6. add it to mr 
 -----------------------------------------------------------------------------------------------------------------------------------
 mr - mr is the tool to avoid updating the multiple repositories one by one, essentially it's just a wrapper around the other repos. 
 === 
