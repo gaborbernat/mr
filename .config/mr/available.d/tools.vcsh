@@ -1,2 +1,2 @@
-[$HOME/.config/vcsh/repo.d/tool.git]
+[$HOME/.config/vcsh/repo.d/tools.git]
 checkout = vcsh clone git@github.com:gaborbernat/tools.git tools
