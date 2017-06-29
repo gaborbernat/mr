@@ -4,3 +4,6 @@ jobs = 5
 include = cat /usr/share/mr/vcsh
 
 include = cat ~/.config/mr/config.d/*
+
+[.config/vcsh/repo.d/tinyproxy.git]
+checkout = vcsh clone 'https://bbgithub.dev.bloomberg.com/bgabor8/tinyproxy.git' 'tinyproxy'
